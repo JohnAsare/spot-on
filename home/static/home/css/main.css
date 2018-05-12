@@ -218,3 +218,7 @@ img {
     /* Full height */
     height: 100%;
 }
+
+.spotlogo{
+    background-image: url("/home/static/home/images/logo.png");
+}
