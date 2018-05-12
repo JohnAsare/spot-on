@@ -2,9 +2,8 @@
 
 {% include "home/includes/head.html" %}
 
-<div class="spotlogo"> dfdfdfd
-</div>
-<div class="demo-layout-transparent mdl-layout mdl-js-layout" >
+<body id="bg" style="background-image: url('{% static "home/images/logo.png" %}')" ;>
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
 
     {% include "home/includes/navbar.html" %}
 
@@ -24,11 +23,12 @@
                                     </div>
                                     <div class="mdl-card__supporting-text">
                                         <h2 class="product-name">{{ product.product_name }}</h2>
-                                        <hr />
+                                        <hr/>
                                         <p>{{ product.product_subtitle }}</p>
                                     </div>
                                     <div class="mdl-card__actions mdl-card--border">
-                                        <a target="_blank" href="{{ product.product_url}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                        <a target="_blank" href="{{ product.product_url }}"
+                                           class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                             View product
                                         </a>
                                     </div>
@@ -39,28 +39,30 @@
                 {% endfor %}
             </div>
 
-            <div class="pagination">
-                <span class="step-links">
-                    {% if products.has_previous %}
-                        <a href="?page=1">&laquo; first</a>
-                        <a href="?page={{ products.previous_page_number }}">previous</a>
-                    {% endif %}
-
-                    <span class="current">
-                        Page {{ products.number }} of {{ products.paginator.num_pages }}.
-                    </span>
-
-                    {% if products.has_next %}
-                        <a href="?page={{ products.next_page_number }}">next</a>
-                        <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
-                    {% endif %}
-                </span>
-            </div>
-
-            {% include "home/includes/footer.html" %}
+{#            <div class="pagination">#}
+{#                <span class="step-links">#}
+{#                    {% if products.has_previous %}#}
+{#                        <a href="?page=1">&laquo; first</a>#}
+{#                        <a href="?page={{ products.previous_page_number }}">previous</a>#}
+{#                    {% endif %}#}
+{##}
+{#                    <span class="current">#}
+{#                        Page {{ products.number }} of {{ products.paginator.num_pages }}.#}
+{#                    </span>#}
+{##}
+{#                    {% if products.has_next %}#}
+{#                        <a href="?page={{ products.next_page_number }}">next</a>#}
+{#                        <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>#}
+{#                    {% endif %}#}
+{#                </span>#}
+{#            </div>#}
+{#            <div style="margin-bottom: 100px">#}
+{#                {% include "home/includes/footer.html" %}#}
+{#            </div>#}
 
         </div>
     </main>
 </div>
+
 
 {% include "home/includes/scripts.html" %}
